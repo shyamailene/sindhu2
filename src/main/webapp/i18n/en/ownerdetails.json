@@ -1,0 +1,27 @@
+{
+    "sindhu2App": {
+        "ownerdetails" : {
+            "home": {
+                "title": "Ownerdetails",
+                "createLabel": "Create a new Ownerdetails",
+                "createOrEditLabel": "Create or edit a Ownerdetails"
+            },
+            "created": "A new Ownerdetails is created with identifier {{ param }}",
+            "updated": "A Ownerdetails is updated with identifier {{ param }}",
+            "deleted": "A Ownerdetails is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ownerdetails {{ id }}?"
+            },
+            "detail": {
+                "title": "Ownerdetails"
+            },
+            "name": "Name",
+            "mobile": "Mobile",
+            "carlocation": "Carlocation",
+            "intercom": "Intercom",
+            "carnumber": "Carnumber",
+            "bikenumber": "Bikenumber",
+            "flatid": "Flatid"
+        }
+    }
+}

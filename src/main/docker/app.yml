@@ -1,0 +1,14 @@
+version: '2'
+services:
+    sindhu2-app:
+        image: sindhu2
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://sindhu2-postgresql:5432/sindhu2
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    sindhu2-postgresql:
+        extends:
+            file: postgresql.yml
+            service: sindhu2-postgresql

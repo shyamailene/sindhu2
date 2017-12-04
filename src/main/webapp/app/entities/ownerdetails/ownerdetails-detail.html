@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="sindhu2App.ownerdetails.detail.title">Ownerdetails</span> {{vm.ownerdetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="sindhu2App.ownerdetails.name">Name</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.name}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.mobile">Mobile</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.mobile}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.carlocation">Carlocation</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.carlocation}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.intercom">Intercom</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.intercom}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.carnumber">Carnumber</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.carnumber}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.bikenumber">Bikenumber</span></dt>
+        <dd>
+            <span>{{vm.ownerdetails.bikenumber}}</span>
+        </dd>
+        <dt><span data-translate="sindhu2App.ownerdetails.flatid">Flatid</span></dt>
+        <dd>
+            <a ui-sref="flat-detail({id:vm.ownerdetails.flatid.id})">{{vm.ownerdetails.flatid.flatdesc}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="ownerdetails-detail.edit({id:vm.ownerdetails.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

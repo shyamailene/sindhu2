@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "blockid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "blockdesc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171030124044",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "block",
+    "pagination": "pager"
+}
