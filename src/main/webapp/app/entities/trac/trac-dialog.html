@@ -27,8 +27,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="sindhu2App.trac.type" for="field_type">Type</label>
-
-            <select class="form-control" name="type" id="field_type" ng-model="vm.trac.type" ng-options="iss.issue as iss.issue for iss in vm.issues">
+			<select class="form-control" name="type" id="field_type" ng-model="vm.trac.type" ng-options="iss.issue as iss.issue for iss in vm.issues">
             </select>
             <div ng-show="editForm.type.$invalid">
                 <p class="help-block"

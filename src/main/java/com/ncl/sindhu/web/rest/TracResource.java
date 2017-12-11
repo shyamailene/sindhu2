@@ -35,15 +35,15 @@ public class TracResource {
     private static final String ENTITY_NAME = "trac";
 
     private final TracRepository tracRepository;
-
-    @Autowired
-    private MailService mailService;
-
-    private final UserRepository userRepository;
+	
+	@Autowired
+    private MailService mailService;	
+	
+	private final UserRepository userRepository;
 
     public TracResource(TracRepository tracRepository, UserRepository userRepository) {
         this.tracRepository = tracRepository;
-        this.userRepository=userRepository;
+		this.userRepository=userRepository;
     }
 
     /**
@@ -60,10 +60,11 @@ public class TracResource {
         if (trac.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new trac cannot already have an ID")).body(null);
         }
-        Trac result = tracRepository.save(trac);
-        String userid= SecurityUtils.getCurrentUserLogin();
+		String userid= SecurityUtils.getCurrentUserLogin();
         User user=userRepository.findOneByLogin(userid).get();
-        mailService.sendEmail(user,trac);
+		trac.setUser(user);
+        Trac result = tracRepository.save(trac);
+        mailService.sendEmail(user,trac);		
         return ResponseEntity.created(new URI("/api/tracs/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -100,7 +101,7 @@ public class TracResource {
     @Timed
     public List<Trac> getAllTracs() {
         log.debug("REST request to get all Tracs");
-        return tracRepository.findAll();
+        return tracRepository.findByUserIsCurrentUser();
     }
 
     /**

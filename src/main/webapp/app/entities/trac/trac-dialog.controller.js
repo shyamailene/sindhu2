@@ -5,15 +5,15 @@
         .module('sindhu2App')
         .controller('TracDialogController', TracDialogController);
 
-    TracDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trac'];
+    TracDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trac', 'User'];
 
-    function TracDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trac) {
+    function TracDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trac, User) {
         var vm = this;
 
         vm.trac = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.issues = [
+		vm.issues = [
             {issue : "Electrical"},
             {issue : "Carpenter"},
             {issue : "CommonArea"},
@@ -21,7 +21,8 @@
             {issue : "Security"},
             {issue : "HouseKeeping"},
             {issue : "Other"}
-        ];
+        ];		
+        vm.users = User.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

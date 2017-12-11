@@ -5,9 +5,9 @@
         .module('sindhu2App')
         .controller('TracDetailController', TracDetailController);
 
-    TracDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trac'];
+    TracDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trac', 'User'];
 
-    function TracDetailController($scope, $rootScope, $stateParams, previousState, entity, Trac) {
+    function TracDetailController($scope, $rootScope, $stateParams, previousState, entity, Trac, User) {
         var vm = this;
 
         vm.trac = entity;

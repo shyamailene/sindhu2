@@ -34,6 +34,9 @@ public class Trac implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne(optional = false)
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -79,6 +82,19 @@ public class Trac implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Trac user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

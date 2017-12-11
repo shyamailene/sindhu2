@@ -17,7 +17,8 @@
             },
             "subject": "Subject",
             "type": "Type",
-            "description": "Description"
+            "description": "Description",
+            "user": "User"
         }
     }
 }

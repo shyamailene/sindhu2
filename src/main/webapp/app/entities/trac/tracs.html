@@ -22,6 +22,7 @@
                     <th><span data-translate="sindhu2App.trac.subject">Subject</span></th>
                     <th><span data-translate="sindhu2App.trac.type">Type</span></th>
                     <th><span data-translate="sindhu2App.trac.description">Description</span></th>
+                    <th><span data-translate="sindhu2App.trac.user">User</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,6 +32,9 @@
                     <td>{{trac.subject}}</td>
                     <td>{{trac.type}}</td>
                     <td>{{trac.description}}</td>
+                    <td>
+                        {{trac.user.login}}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

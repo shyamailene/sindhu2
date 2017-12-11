@@ -3,6 +3,7 @@ package com.ncl.sindhu.web.rest;
 import com.ncl.sindhu.Sindhu2App;
 
 import com.ncl.sindhu.domain.Trac;
+import com.ncl.sindhu.domain.User;
 import com.ncl.sindhu.repository.TracRepository;
 import com.ncl.sindhu.repository.UserRepository;
 import com.ncl.sindhu.web.rest.errors.ExceptionTranslator;
@@ -49,9 +50,9 @@ public class TracResourceIntTest {
 
     @Autowired
     private TracRepository tracRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+	
+	@Autowired
+    private UserRepository userRepository;	
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -90,6 +91,11 @@ public class TracResourceIntTest {
             .subject(DEFAULT_SUBJECT)
             .type(DEFAULT_TYPE)
             .description(DEFAULT_DESCRIPTION);
+        // Add required entity
+        User user = UserResourceIntTest.createEntity(em);
+        em.persist(user);
+        em.flush();
+        trac.setUser(user);
         return trac;
     }
 
